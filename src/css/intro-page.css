@@ -1,0 +1,65 @@
+.container {
+  display: grid;
+  margin-top: 2.5em;
+  grid-template-areas: "title" "description" "introImg" "button";
+}
+.container .intro-description,
+.container .intro-img {
+  margin-bottom: 2.5em;
+}
+.container .intro-title {
+  grid-area: title;
+  margin-bottom: 0.65em;
+}
+.container .intro-description {
+  grid-area: description;
+  line-height: 1.75;
+}
+.container .intro-img {
+  grid-area: introImg;
+  justify-self: center;
+}
+
+.button-getStarted {
+  all: unset;
+  cursor: pointer;
+  background-color: #4361ee;
+  color: white;
+  padding: 0.65em 0;
+  text-align: center;
+  border-radius: 7px;
+  grid-area: button;
+}
+
+@media (min-width: 470px) {
+  .container {
+    grid-template-areas: "title introImg" "description introImg" "button introImg";
+    gap: 0 1em;
+  }
+  .container .intro-img {
+    align-self: center;
+    justify-self: end;
+  }
+  .container .button-getStarted {
+    max-width: 250px;
+  }
+}
+@media (min-width: 740px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .intro-title {
+    font-size: 3rem;
+  }
+  .intro-description {
+    font-size: 1.35rem;
+  }
+  .button-getStarted {
+    padding: 0.85em 0;
+  }
+}
+
+/*# sourceMappingURL=intro-page.css.map */
