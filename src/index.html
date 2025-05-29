@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpg" href="./img/logo-browser.jpg" />
     <title>Dictionary Web App</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- css links -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/intro-page.css" />
   </head>
   <body>
-    <nav>
+    <nav class="navbar">
       <img src="./img/logo-navbar.jpg" alt="an open book" class="nav-logo" />
+      <!-- make this dropdownmenu -->
+      <select name="fonts" id="font-select" class="font-select">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans Serif</option>
+        <option value="monospace">Monospace</option>
+      </select>
+      <div class="vertical-line"></div>
+      <div class="nav-toggle-switch">
+        <label class="toggle-switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <i
+          class="fa-solid fa-moon fa-rotate-by fa-2xl"
+          style="color: gray; --fa-rotate-angle: -25deg"
+        ></i>
+      </div>
     </nav>
-    <main class="main">
+    <main class="intro-main">
       <section class="container">
         <h1 class="intro-title">Dictionary Web App</h1>
         <p class="intro-description">
