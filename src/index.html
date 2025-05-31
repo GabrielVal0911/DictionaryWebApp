@@ -19,17 +19,23 @@
   </head>
   <body>
     <nav class="navbar">
-      <img src="./img/logo-navbar.jpg" alt="an open book" class="nav-logo" />
-      <!-- make this dropdownmenu -->
-      <select name="fonts" id="font-select" class="font-select">
-        <option value="serif">Serif</option>
-        <option value="sans-serif">Sans Serif</option>
-        <option value="monospace">Monospace</option>
-      </select>
+      <img src="./img/logo-navbar.png" alt="an open book" class="nav-logo" />
+      <div class="custom-select">
+        <button class="select-button">
+          <span class="selected-value">MonoSpace</span>
+          <span class="arrow"></span>
+        </button>
+
+        <ul class="select-dropdown hidden">
+          <li>Serif</li>
+          <li>Sans serif</li>
+          <li class="selected">MonoSpace</li>
+        </ul>
+      </div>
       <div class="vertical-line"></div>
       <div class="nav-toggle-switch">
-        <label class="toggle-switch">
-          <input type="checkbox" />
+        <label class="toggle-switch" id="toggle-switch">
+          <input type="checkbox" id="switchTheme" />
           <span class="slider"></span>
         </label>
         <i
@@ -54,5 +60,6 @@
       </section>
     </main>
     <script src="js/script.js"></script>
+    <script type="module" src="js/selectFont.js"></script>
   </body>
 </html>

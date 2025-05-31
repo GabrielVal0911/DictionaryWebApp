@@ -1,21 +1,91 @@
 .navbar {
-  border: 2px solid red;
   display: flex;
   align-items: center;
-  gap: 1.25em;
+  gap: 0.7em;
 }
 
 .nav-logo {
-  width: 65px;
+  min-width: 30px;
+  max-width: 40px;
+  background-color: white;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  min-width: 120px;
+  margin-left: auto;
+}
+.custom-select .select-button {
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.675em 0.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.custom-select .select-button .arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid hsl(274, 82%, 60%);
+}
+.custom-select .select-dropdown {
+  background-color: inherit;
+  color: inherit;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0.6em;
+  margin-top: 0.6em;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-height: 150px;
+}
+.custom-select .select-dropdown li {
+  padding: 0.4em;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.custom-select .select-dropdown li.selected {
+  color: hsl(274, 82%, 60%);
+  border-radius: 4px;
+}
+.custom-select .select-dropdown li:hover, .custom-select .select-dropdown lifocus {
+  color: hsl(274, 82%, 60%);
+  background-color: #f2f2f2;
+  border-radius: 4px;
+}
+
+.select-dropdown.hidden {
+  display: none;
+}
+
+.select-dropdown.box-shadow-purple {
+  box-shadow: 0px 5px 30px hsl(274, 82%, 50%);
 }
 
 .vertical-line {
-  width: 1px;
+  min-width: 1px;
   background-color: #dcdcdc;
   height: 40px;
 }
 
 /* Toggle siwtch */
+.nav-toggle-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -48,7 +118,7 @@
   transition: transform 0.3s;
 }
 .toggle-switch input:checked + .slider {
-  background-color: #4caf50;
+  background-color: hsl(274, 82%, 60%);
 }
 .toggle-switch input:checked + .slider::before {
   transform: translateX(26px);
