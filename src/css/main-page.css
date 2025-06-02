@@ -1,0 +1,15 @@
+.search-form .search-input {
+  padding: 1.3em 0.65em;
+  border: 2px solid hsl(0, 0%, 96%);
+  background-color: hsl(0, 0%, 96%);
+  border-radius: 13px;
+}
+.search-form .search-input:focus-within {
+  outline: none;
+  border: 2px solid hsl(274, 82%, 60%);
+}
+.search-form .fa-magnifying-glass {
+  color: hsl(274, 82%, 60%);
+}
+
+/*# sourceMappingURL=main-page.css.map */

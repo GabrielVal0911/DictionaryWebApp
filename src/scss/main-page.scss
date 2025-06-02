@@ -1,0 +1,19 @@
+@use "colors";
+
+.search-form {
+  .search-input {
+    padding: 1.3em 0.65em;
+    border: 2px solid colors.$inputBG-color;
+    background-color: colors.$inputBG-color;
+    border-radius: 13px;
+
+    &:focus-within {
+      outline: none;
+      border: 2px solid colors.$purple-color;
+    }
+  }
+
+  .fa-magnifying-glass {
+    color: colors.$purple-color;
+  }
+}

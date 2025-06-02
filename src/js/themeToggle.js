@@ -1,18 +1,13 @@
-export function themeToggle(input) {
-  // refactor this
+export function themeToggle(input, body, selectMenu, moonIcon) {
   if (input.checked) {
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = "white";
-    document
-      .querySelector(".select-dropdown")
-      .classList.add("box-shadow-purple");
-    document.querySelector(".fa-moon").style.color = "hsl(274deg, 82%, 60%)";
+    body.style.backgroundColor = "black";
+    body.style.color = "white";
+    selectMenu.classList.add("box-shadow-purple");
+    moonIcon.style.color = "hsl(274deg, 82%, 60%)";
   } else {
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = "black";
-    document
-      .querySelector(".select-dropdown")
-      .classList.remove("box-shadow-purple");
-    document.querySelector(".fa-moon").style.color = "gray";
+    body.style.backgroundColor = "white";
+    body.style.color = "black";
+    selectMenu.classList.remove("box-shadow-purple");
+    moonIcon.style.color = "gray";
   }
 }

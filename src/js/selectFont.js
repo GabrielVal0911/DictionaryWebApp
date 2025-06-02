@@ -1,21 +1,24 @@
 import { themeToggle } from "./themeToggle.js";
 
 const switchTheme = document.getElementById("switchTheme");
+const body = document.body;
+const selectMenu = document.querySelector(".select-dropdown");
+const moonIcon = document.querySelector(".fa-moon");
+const btnGetStarted = document.getElementById("button-getStarted");
 
 document.addEventListener("DOMContentLoaded", () => {
   const customSelects = document.querySelectorAll(".custom-select");
 
   customSelects.forEach((customSelect) => {
     const selectButton = customSelect.querySelector(".select-button");
-    const dropdown = customSelect.querySelector(".select-dropdown");
 
-    const options = dropdown.querySelectorAll("li");
+    const options = selectMenu.querySelectorAll("li");
     const selectedValue = selectButton.querySelector(".selected-value");
 
     const toggleDropdown = (expand = null) => {
       const isOpen =
-        expand !== null ? expand : dropdown.classList.contains("hidden");
-      dropdown.classList.toggle("hidden", !isOpen);
+        expand !== null ? expand : selectMenu.classList.contains("hidden");
+      selectMenu.classList.toggle("hidden", !isOpen);
       selectButton.setAttribute("aria-expanded", isOpen);
     };
 
@@ -32,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         document.body.style.fontFamily = option.textContent;
       }
-      console.log(option.textContent);
     };
     options.forEach((option) => {
       option.addEventListener("click", () => {
@@ -45,5 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // toggle theme
 document.getElementById("toggle-switch").addEventListener("click", function () {
-  themeToggle(switchTheme);
+  themeToggle(switchTheme, body, selectMenu, moonIcon);
 });
+
+if (btnGetStarted) {
+  btnGetStarted.addEventListener("click", function () {
+    window.location.href = "main-page.html";
+  });
+}
