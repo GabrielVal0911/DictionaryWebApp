@@ -53,10 +53,35 @@
         class="search-input"
         placeholder="Search for any word..."
       />
-      <label class="search-label">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </label>
+
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
     </form>
+
+    <main>
+      <h1 class="word">Keyboard</h1>
+      <figure>
+        <figcaption class="visually-hidden">
+          Listen to the pronunciation
+        </figcaption>
+        <audio
+          id="audio-pronunciations"
+          src="https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3"
+        ></audio>
+        <button class="button-play" id="button-play">
+          <i class="fa-solid fa-play play-icon"></i>
+        </button>
+      </figure>
+      <h2 class="word-phonetic">/wɜːd/</h2>
+      <span class="word-part-of-speech">noun</span>
+    </main>
     <script type="module" src="js/selectFont.js"></script>
+    <script>
+      // change this when i get api
+      const audio = document.getElementById("audio-pronunciations");
+      const btnPlay = document.getElementById("button-play");
+      btnPlay.addEventListener("click", function () {
+        audio.play();
+      });
+    </script>
   </body>
 </html>

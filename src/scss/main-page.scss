@@ -1,11 +1,18 @@
 @use "colors";
 
 .search-form {
+  min-width: 270px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 2.5em;
   .search-input {
     padding: 1.3em 0.65em;
     border: 2px solid colors.$inputBG-color;
     background-color: colors.$inputBG-color;
     border-radius: 13px;
+    width: 100%;
+    padding-inline-end: 45px;
 
     &:focus-within {
       outline: none;
@@ -13,7 +20,46 @@
     }
   }
 
+  .search-icon {
+    position: absolute;
+    right: 20px;
+  }
+
   .fa-magnifying-glass {
     color: colors.$purple-color;
   }
+}
+
+.button-play {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: colors.$buttonPlayBG-color;
+  cursor: pointer;
+
+  .play-icon {
+    font-size: 20px;
+    color: colors.$purple-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: colors.$purple-color;
+    outline: none;
+
+    .play-icon {
+      color: white;
+    }
+  }
+}
+
+// good for accessibility
+.visually-hidden {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
