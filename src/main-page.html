@@ -45,7 +45,7 @@
       </div>
     </nav>
 
-    <form class="search-form">
+    <form class="search-form" id="search-form">
       <input
         type="text"
         id="wordSearch"
@@ -54,11 +54,13 @@
         placeholder="Search for any word..."
       />
 
-      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <button class="button-search">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      </button>
     </form>
 
-    <main>
-      <h1 class="word">Keyboard</h1>
+    <main id="word-container">
+      <!-- <h1 class="word">Keyboard</h1>
       <figure>
         <figcaption class="visually-hidden">
           Listen to the pronunciation
@@ -73,15 +75,28 @@
       </figure>
       <h2 class="word-phonetic">/wɜːd/</h2>
       <span class="word-part-of-speech">noun</span>
+      <h3 class="word-meaning">Meaning</h3>
+      <ul class="word-meaning-list">
+        <li class="word-meaning-definition">
+          (etc) A set of keys used to operate a typewriter, computer
+        </li>
+      </ul>
+      <p class="word-synonyms">
+        Synonyms <span class="synonyms-examples">electronic keyboard</span>
+      </p>
+      <small
+        >Source <a href="#">https://en-wikitionary.org/wiki/keyboard</a></small
+      > -->
     </main>
     <script type="module" src="js/selectFont.js"></script>
+    <script type="module" src="js/script.js"></script>
     <script>
       // change this when i get api
-      const audio = document.getElementById("audio-pronunciations");
-      const btnPlay = document.getElementById("button-play");
-      btnPlay.addEventListener("click", function () {
-        audio.play();
-      });
+      // const audio = document.getElementById("audio-pronunciations");
+      // const btnPlay = document.getElementById("button-play");
+      // btnPlay.addEventListener("click", function () {
+      //   audio.play();
+      // });
     </script>
   </body>
 </html>

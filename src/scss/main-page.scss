@@ -25,6 +25,14 @@
     right: 20px;
   }
 
+  .button-search {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
   .fa-magnifying-glass {
     color: colors.$purple-color;
   }
@@ -62,4 +70,17 @@
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.word-part-of-speech {
+  display: flex;
+  align-items: center;
+
+  &:after {
+    content: "";
+    flex: 1;
+    background-color: colors.$line-color;
+    height: 1px;
+    margin-left: 1.5em;
+  }
 }
