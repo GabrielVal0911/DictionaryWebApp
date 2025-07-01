@@ -28,7 +28,8 @@ formSearch.addEventListener("submit", function (e) {
 });
 
 function renderHTML(data) {
-  const { word, phonetic, phonetics, meanings, sourceUrls } = data;
+  const { word, phonetics, meanings, sourceUrls } = data;
+  console.log(data);
 
   //   console.log(word);
   //   console.log(phonetic);
@@ -46,26 +47,17 @@ function renderHTML(data) {
             return `
       <li class="word-meaning-definition">
           ${definition.definition}
-       
-          ${
-            definition.synonyms
-              ? `<p class="word-synonyms">
-        Synonyms <span class="synonyms-examples">${definition.synonyms.map(
-          (synonym) => ` ${synonym}`
-        )}</span>
-      </p>`
-              : null
-          }
+          ${displaySynonymsAndAntonyms(definition)}
+         
         </li>
       `;
           })
           .join("")}
       </ul>
+      ${displaySynonymsAndAntonyms(meaning)}
       `;
     })
     .join("");
-
-  console.log(allMeanings);
 
   if (data) {
     wordContainer.innerHTML = `
@@ -76,24 +68,57 @@ function renderHTML(data) {
         </figcaption>
         <audio
           id="audio-pronunciations"
-          src="https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3"
+          src="${getAudioPhonetics(phonetics)}"
         ></audio>
         <button class="button-play" id="button-play">
           <i class="fa-solid fa-play play-icon"></i>
         </button>
       </figure>
-      <h2 class="word-phonetic">${phonetic}</h2>
+      <h2 class="word-phonetic">${getPhoneticText(phonetics).text || ""}</h2>
       ${allMeanings}
-      <p class="word-synonyms">
-        Synonyms <span class="synonyms-examples">electronic keyboard</span>
-      </p>
       <small
         >Source <a href="${sourceUrls[0]}">${sourceUrls[0]}</a></small
       >
       `;
   }
+
+  playAudio();
 }
 
 function displaySynonymsAndAntonyms(wordData) {
-  //   do this function
+  const { synonyms = [], antonyms = [] } = wordData;
+
+  let output = "";
+
+  if (synonyms.length > 0) {
+    output += `<p class="word-synonyms">
+         Synonyms <span class="synonyms-examples">${synonyms.join(", ")}</span>
+       </p>`;
+  } else if (antonyms.length > 0) {
+    output += `<p class="word-antonyms">
+         Antonyms <span class="antonyms-examples">${antonyms.join(", ")}</span>
+       </p>`;
+  }
+
+  return output;
+}
+
+function getAudioPhonetics(phonetics) {
+  if (!Array.isArray(phonetics)) return "";
+  const audioSrc = phonetics.find((phonetic) => phonetic.audio);
+  return audioSrc ? audioSrc.audio : "";
+}
+
+function getPhoneticText(phonetics) {
+  if (!Array.isArray(phonetics)) return "";
+  return phonetics.find((phonetic) => phonetic.text) || "";
+}
+
+function playAudio() {
+  const audio = document.getElementById("audio-pronunciations");
+  const btnPlay = document.getElementById("button-play");
+
+  btnPlay.addEventListener("click", function () {
+    audio.play();
+  });
 }
