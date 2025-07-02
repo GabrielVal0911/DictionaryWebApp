@@ -3,6 +3,8 @@
 const inputSearch = document.getElementById("wordSearch");
 const formSearch = document.getElementById("search-form");
 const wordContainer = document.getElementById("word-container");
+const searchErrorMessage = document.getElementById("search__error-message");
+const loader = document.getElementById("loader");
 
 async function getWordData(path) {
   try {
@@ -18,6 +20,7 @@ async function getWordData(path) {
     }
   } catch (error) {
     console.error("Error:", error);
+    searchErrorMessage.classList.remove("hidden");
   }
 }
 
@@ -29,7 +32,6 @@ formSearch.addEventListener("submit", function (e) {
 
 function renderHTML(data) {
   const { word, phonetics, meanings, sourceUrls } = data;
-  console.log(data);
 
   //   console.log(word);
   //   console.log(phonetic);
@@ -47,6 +49,7 @@ function renderHTML(data) {
             return `
       <li class="word-meaning-definition">
           ${definition.definition}
+          ${displayExamples(definition)}
           ${displaySynonymsAndAntonyms(definition)}
          
         </li>
@@ -98,6 +101,18 @@ function displaySynonymsAndAntonyms(wordData) {
     output += `<p class="word-antonyms">
          Antonyms <span class="antonyms-examples">${antonyms.join(", ")}</span>
        </p>`;
+  }
+
+  return output;
+}
+
+function displayExamples(wordData) {
+  const { example } = wordData;
+
+  let output = "";
+
+  if (example) {
+    output += `<p class="word-example">${example}</p>`;
   }
 
   return output;

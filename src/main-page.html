@@ -52,6 +52,7 @@
         name="wordSearch"
         class="search-input"
         placeholder="Search for any word..."
+        required
       />
 
       <button class="button-search">
@@ -59,34 +60,24 @@
       </button>
     </form>
 
-    <main id="word-container">
-      <!-- <h1 class="word">Keyboard</h1>
-      <figure>
-        <figcaption class="visually-hidden">
-          Listen to the pronunciation
-        </figcaption>
-        <audio
-          id="audio-pronunciations"
-          src="https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3"
-        ></audio>
-        <button class="button-play" id="button-play">
-          <i class="fa-solid fa-play play-icon"></i>
-        </button>
-      </figure>
-      <h2 class="word-phonetic">/wɜːd/</h2>
-      <span class="word-part-of-speech">noun</span>
-      <h3 class="word-meaning">Meaning</h3>
-      <ul class="word-meaning-list">
-        <li class="word-meaning-definition">
-          (etc) A set of keys used to operate a typewriter, computer
-        </li>
-      </ul>
-      <p class="word-synonyms">
-        Synonyms <span class="synonyms-examples">electronic keyboard</span>
-      </p>
-      <small
-        >Source <a href="#">https://en-wikitionary.org/wiki/keyboard</a></small
-      > -->
+    <main id="word-container" class="word-container">
+      <div class="container-loader hidden" id="loader">
+        <span class="loader"></span>
+      </div>
+      <div
+        class="search__error-message hidden"
+        id="search__error-message"
+        aria-live="polite"
+      >
+        <i
+          class="fa-solid fa-circle-exclamation fa-2xl exclamation-mark"
+          aria-label="Eroare"
+        ></i>
+        <h2>No Definitions Found</h2>
+        <p>
+          Sorry, we couldn't find definitions for the word you were looking for.
+        </p>
+      </div>
     </main>
     <script type="module" src="js/selectFont.js"></script>
     <script type="module" src="js/script.js"></script>
