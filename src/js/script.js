@@ -2,12 +2,14 @@
 
 const inputSearch = document.getElementById("wordSearch");
 const formSearch = document.getElementById("search-form");
-const wordContainer = document.getElementById("word-container");
+const definitionsContainer = document.getElementById("definitions-container");
 const searchErrorMessage = document.getElementById("search__error-message");
 const loader = document.getElementById("loader");
 
 async function getWordData(path) {
   try {
+    resetHTML();
+    showLoader();
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${path}`
     );
@@ -21,6 +23,8 @@ async function getWordData(path) {
   } catch (error) {
     console.error("Error:", error);
     searchErrorMessage.classList.remove("hidden");
+    hideLoader();
+    resetHTML();
   }
 }
 
@@ -63,7 +67,7 @@ function renderHTML(data) {
     .join("");
 
   if (data) {
-    wordContainer.innerHTML = `
+    definitionsContainer.innerHTML = `
          <h1 class="word">${word}</h1>
       <figure>
         <figcaption class="visually-hidden">
@@ -79,12 +83,16 @@ function renderHTML(data) {
       </figure>
       <h2 class="word-phonetic">${getPhoneticText(phonetics).text || ""}</h2>
       ${allMeanings}
-      <small
-        >Source <a href="${sourceUrls[0]}">${sourceUrls[0]}</a></small
+      <small class="source"
+        >Source <a href="${sourceUrls[0]}">${
+      sourceUrls[0]
+    }<img src="./img/new-tab.png" alt="new tab icon" class="icon-newTab"/></a></small
       >
       `;
   }
 
+  hideLoader();
+  searchErrorMessage.classList.add("hidden");
   playAudio();
 }
 
@@ -136,4 +144,16 @@ function playAudio() {
   btnPlay.addEventListener("click", function () {
     audio.play();
   });
+}
+
+function resetHTML() {
+  definitionsContainer.innerHTML = "";
+}
+
+function showLoader() {
+  loader.classList.remove("hidden");
+}
+
+function hideLoader() {
+  loader.classList.add("hidden");
 }
