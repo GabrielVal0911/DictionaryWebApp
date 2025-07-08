@@ -7,10 +7,11 @@
   margin-top: 2.5em;
 }
 .search-form .search-input {
+  font-size: 1rem;
   padding: 1.3em 0.65em;
   border: 2px solid hsl(0, 0%, 96%);
   background-color: hsl(0, 0%, 96%);
-  border-radius: 13px;
+  border-radius: 16px;
   width: 100%;
   padding-inline-end: 45px;
 }
@@ -118,9 +119,9 @@
 }
 
 .definitions-container {
-  padding: 1.5em 0;
+  padding: 2.1em 0 0;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
 }
 .definitions-container > * {
   grid-column: 1/-1;
@@ -140,6 +141,7 @@
   grid-column: 1;
   color: hsl(274, 82%, 60%);
   font-weight: 550;
+  margin-top: 0.25em;
 }
 .definitions-container figure {
   grid-column: 2;
@@ -154,20 +156,22 @@
 }
 .definitions-container .word-meaning {
   font-weight: 500;
-  margin-bottom: 0.2em;
+  margin: 0.5em 0;
+  font-size: 1.2rem;
 }
 .definitions-container .word-meaning-list {
   padding-left: 2em;
+  font-size: 1rem;
 }
 .definitions-container .word-meaning-list .word-meaning-definition {
-  margin: 0.6em 0;
+  margin: 0.8em 0;
 }
 .definitions-container .word-meaning-list .word-meaning-definition::marker {
   color: hsl(274, 82%, 60%);
 }
 .definitions-container .word-synonyms {
   font-size: 1.05rem;
-  margin: 1em 0 0.5em;
+  margin: 1em 0 0.7em;
 }
 .definitions-container .word-synonyms .synonyms-examples {
   color: hsl(274, 82%, 60%);
@@ -186,15 +190,32 @@
 }
 .definitions-container .source {
   font-size: 0.9rem;
+  border-top: 1px solid hsl(0, 0%, 91%);
+  margin-top: 1.35em;
+  padding-top: 1.5em;
+  display: flex;
+  align-items: center;
+  color: inherit;
 }
 .definitions-container .source a {
-  border: 2px solid blue;
-  color: black;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   margin-left: 1em;
+  color: inherit;
 }
 .definitions-container .source a .icon-newTab {
   width: 15px;
-  border: 2px solid red;
+}
+@media (min-width: 350px) {
+  .definitions-container .source {
+    font-size: 0.65rem;
+  }
+}
+@media (min-width: 550px) {
+  .definitions-container .source {
+    font-size: 0.85rem;
+  }
 }
 
 /*# sourceMappingURL=main-page.css.map */

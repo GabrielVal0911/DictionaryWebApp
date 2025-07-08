@@ -36,10 +36,9 @@
   border-top: 6px solid hsl(274, 82%, 60%);
 }
 .custom-select .select-dropdown {
-  background-color: inherit;
-  color: inherit;
   position: absolute;
   background-color: white;
+  color: black;
   top: 100%;
   left: 0;
   width: 100%;

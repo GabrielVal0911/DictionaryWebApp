@@ -7,10 +7,11 @@
   align-items: center;
   margin-top: 2.5em;
   .search-input {
+    font-size: 1rem;
     padding: 1.3em 0.65em;
     border: 2px solid colors.$inputBG-color;
     background-color: colors.$inputBG-color;
-    border-radius: 13px;
+    border-radius: 16px;
     width: 100%;
     padding-inline-end: 45px;
 
@@ -137,9 +138,9 @@
 // word container
 
 .definitions-container {
-  padding: 1.5em 0;
+  padding: 2.1em 0 0;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
 
   & > * {
     grid-column: 1 / -1;
@@ -161,6 +162,7 @@
     grid-column: 1;
     color: colors.$purple-color;
     font-weight: 550;
+    margin-top: 0.25em;
   }
   figure {
     grid-column: 2;
@@ -177,14 +179,16 @@
 
   .word-meaning {
     font-weight: 500;
-    margin-bottom: 0.2em;
+    margin: 0.5em 0;
+    font-size: 1.2rem;
   }
 
   .word-meaning-list {
     padding-left: 2em;
+    font-size: 1rem;
 
     .word-meaning-definition {
-      margin: 0.6em 0;
+      margin: 0.8em 0;
     }
 
     .word-meaning-definition::marker {
@@ -194,7 +198,7 @@
 
   .word-synonyms {
     font-size: 1.05rem;
-    margin: 1em 0 0.5em;
+    margin: 1em 0 0.7em;
 
     .synonyms-examples {
       color: colors.$purple-color;
@@ -217,16 +221,30 @@
 
   .source {
     font-size: 0.9rem;
+    border-top: 1px solid colors.$line-color;
+    margin-top: 1.35em;
+    padding-top: 1.5em;
+    display: flex;
+    align-items: center;
+    color: inherit;
 
     a {
-      border: 2px solid blue;
-      color: black;
+      display: flex;
+      gap: 8px;
+      align-items: center;
       margin-left: 1em;
+      color: inherit;
 
       .icon-newTab {
         width: 15px;
-        border: 2px solid red;
       }
+    }
+    @media (min-width: 350px) {
+      font-size: 0.65rem;
+    }
+
+    @media (min-width: 550px) {
+      font-size: 0.85rem;
     }
   }
 }

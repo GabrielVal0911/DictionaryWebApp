@@ -46,9 +46,9 @@
   }
 
   .select-dropdown {
-    @include inheritColors;
     position: absolute;
     background-color: white;
+    color: black;
     top: 100%;
     left: 0;
     width: 100%;
