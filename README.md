@@ -1,6 +1,6 @@
 # DictionaryWebApp
 
-LIVE:
+LIVE: https://dictionary-web-app-gabrielval0911.netlify.app/
 
 Dictionary Web App is a simple and intuitive web application that allows users to input an English word and instantly receive its definition using a Dictionary API(https://dictionaryapi.dev/). It's a helpful tool for quickly understanding the meaning of English words.
 
