@@ -14,6 +14,7 @@
   border-radius: 16px;
   width: 100%;
   padding-inline-end: 45px;
+  font-family: inherit;
 }
 .search-form .search-input:focus-within {
   outline: none;
@@ -132,6 +133,7 @@
 }
 .definitions-container .word-meaning,
 .definitions-container .word-synonyms,
+.definitions-container .word-antonyms,
 .definitions-container .word-example,
 .definitions-container .source {
   color: gray;
@@ -152,7 +154,7 @@
 .definitions-container .word-part-of-speech {
   font-weight: 900;
   font-size: 1.25rem;
-  margin: 0.65em 0;
+  margin: 1em 0 0.65em;
 }
 .definitions-container .word-meaning {
   font-weight: 500;
@@ -169,11 +171,15 @@
 .definitions-container .word-meaning-list .word-meaning-definition::marker {
   color: hsl(274, 82%, 60%);
 }
-.definitions-container .word-synonyms {
+.definitions-container .word-synonyms,
+.definitions-container .word-antonyms {
   font-size: 1.05rem;
   margin: 1em 0 0.7em;
 }
-.definitions-container .word-synonyms .synonyms-examples {
+.definitions-container .word-synonyms .synonyms-examples,
+.definitions-container .word-synonyms .antonyms-examples,
+.definitions-container .word-antonyms .synonyms-examples,
+.definitions-container .word-antonyms .antonyms-examples {
   color: hsl(274, 82%, 60%);
   font-weight: 550;
 }
@@ -207,14 +213,14 @@
 .definitions-container .source a .icon-newTab {
   width: 15px;
 }
-@media (min-width: 350px) {
+@media (min-width: 280px) {
   .definitions-container .source {
     font-size: 0.65rem;
   }
 }
-@media (min-width: 550px) {
+@media (min-width: 500px) {
   .definitions-container .source {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 

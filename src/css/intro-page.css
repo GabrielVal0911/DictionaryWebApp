@@ -45,6 +45,7 @@
   .container .button-getStarted {
     max-width: 200px;
     margin-top: 1.25em;
+    align-self: start;
   }
 }
 @media (min-width: 740px) {

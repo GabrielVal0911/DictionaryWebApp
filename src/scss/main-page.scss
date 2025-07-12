@@ -14,6 +14,7 @@
     border-radius: 16px;
     width: 100%;
     padding-inline-end: 45px;
+    font-family: inherit;
 
     &:focus-within {
       outline: none;
@@ -152,6 +153,7 @@
 
   .word-meaning,
   .word-synonyms,
+  .word-antonyms,
   .word-example,
   .source {
     color: gray;
@@ -174,7 +176,7 @@
   .word-part-of-speech {
     font-weight: 900;
     font-size: 1.25rem;
-    margin: 0.65em 0;
+    margin: 1em 0 0.65em;
   }
 
   .word-meaning {
@@ -196,11 +198,13 @@
     }
   }
 
-  .word-synonyms {
+  .word-synonyms,
+  .word-antonyms {
     font-size: 1.05rem;
     margin: 1em 0 0.7em;
 
-    .synonyms-examples {
+    .synonyms-examples,
+    .antonyms-examples {
       color: colors.$purple-color;
       font-weight: 550;
     }
@@ -239,12 +243,12 @@
         width: 15px;
       }
     }
-    @media (min-width: 350px) {
+    @media (min-width: 280px) {
       font-size: 0.65rem;
     }
 
-    @media (min-width: 550px) {
-      font-size: 0.85rem;
+    @media (min-width: 500px) {
+      font-size: 0.8rem;
     }
   }
 }

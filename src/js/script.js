@@ -21,7 +21,6 @@ async function getWordData(path) {
       throw new Error("Failed to fetch data");
     }
   } catch (error) {
-    console.error("Error:", error);
     searchErrorMessage.classList.remove("hidden");
     hideLoader();
     resetHTML();
@@ -36,12 +35,6 @@ formSearch.addEventListener("submit", function (e) {
 
 function renderHTML(data) {
   const { word, phonetics, meanings, sourceUrls } = data;
-
-  //   console.log(word);
-  //   console.log(phonetic);
-  //   console.log(phonetics);
-  //   console.log(meanings);
-  //   console.log(sourceUrls);
 
   const allMeanings = meanings
     .map((meaning) => {
